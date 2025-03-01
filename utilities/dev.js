@@ -4,6 +4,23 @@ function bgColorChange() {
             document.body.style.backgroundColor = color;
 }
 
+// update date container
+let updatebox = document.getElementById('updatebox');
+function updateDate() {
+    let currentDate = new Date();
+    let day = currentDate.getDate(); 
+    let month = currentDate.toLocaleString('default', { month: 'long' });
+    let year = currentDate.getFullYear(); 
+    let formatteing = `${day} ${month} ${year}`;
+    let p = document.createElement('p');
+    p.innerText = ` ${formatteing}`;
+    updatebox.appendChild(p);  
+}
+setInterval(updateDate, 86400000);  
+updateDate();  
+
+
+
 // btn click 
 
 let btn1 = document.getElementById('btn1');
